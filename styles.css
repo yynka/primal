@@ -1,0 +1,17 @@
+/* soft-white page bg */
+body{
+  margin:0;
+  background:#FFFAFA;
+}
+
+/* header = program ot black, white-on-white fill, 3 pt black stroke */
+.header{
+  font-family:"program",sans-serif;
+  font-weight:700;
+  font-size:160pt;
+  letter-spacing:-6pt;
+  color:#FFFAFA;
+  -webkit-text-stroke:6px #020403;
+  text-align:center;
+  margin:6rem 0 0;
+}
