@@ -1,17 +1,36 @@
 /* soft-white page bg */
-body{
-  margin:0;
-  background:#FFFAFA;
+body {
+  margin: 0;
+  background: #fffafa;
 }
 
 /* header = program ot black, white-on-white fill, 3 pt black stroke */
-.header{
-  font-family:"program",sans-serif;
-  font-weight:700;
-  font-size:160pt;
-  letter-spacing:-6pt;
-  color:#FFFAFA;
-  -webkit-text-stroke:6px #020403;
-  text-align:center;
-  margin:6rem 0 0;
+.header {
+  font-family: "program", sans-serif;
+  font-weight: 700;
+  font-size: 160pt;
+  letter-spacing: -6pt;
+  color: #fffafa;
+  -webkit-text-stroke: 6px #020403;
+  text-align: center;
+  margin: 6rem 0 0;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .header {
+    font-size: 80pt;
+    letter-spacing: -3pt;
+    -webkit-text-stroke: 3px #020403;
+    margin: 3rem 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 50pt;
+    letter-spacing: -2pt;
+    -webkit-text-stroke: 2px #020403;
+    margin: 2rem 0.5rem 0;
+  }
 }
