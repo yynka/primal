@@ -2,15 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- added viewport meta tag for mobile optimization -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>primal</title>
-  <!-- program ot black -->
+
   <link rel="stylesheet" href="https://use.typekit.net/nmv3sbb.css">
-  <!-- main sheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 class="header">primal</h1>
+
+  <header class="hero">
+    <h1 class="header">primal</h1>
+    <p class="tagline">stop planning.<br>start doing.</p>
+    <button class="cta">get on autopilot&nbsp;→</button>
+  </header>
+
+  <div class="toggles">
+    <button id="darkBtn">dark</button>
+    <button id="hcBtn">high contrast</button>
+  </div>
+
+  <script>
+    const body   = document.body
+    const darkBtn = document.getElementById('darkBtn')
+    const hcBtn   = document.getElementById('hcBtn')
+
+    const refresh = () => {
+      darkBtn.textContent = body.classList.contains('dark') ? 'light'   : 'dark'
+      hcBtn.textContent   = body.classList.contains('hc')   ? 'default' : 'high contrast'
+    }
+
+    darkBtn.onclick = () => { body.classList.toggle('dark'); refresh() }
+    hcBtn.onclick   = () => { body.classList.toggle('hc');   refresh() }
+
+    refresh()
+  </script>
 </body>
 </html>
