@@ -13,7 +13,9 @@
   <header class="hero">
     <h1 class="header">primal</h1>
     <p class="tagline">stop planning.<br>start doing.</p>
-    <button class="cta">get on autopilot&nbsp;→</button>
+
+    <!-- cta now points to url/start -->
+    <a class="cta" href="url/start">get on autopilot&nbsp;→</a>
   </header>
 
   <div class="toggles">
@@ -22,17 +24,17 @@
   </div>
 
   <script>
-    const body   = document.body
-    const darkBtn = document.getElementById('darkBtn')
-    const hcBtn   = document.getElementById('hcBtn')
+    const body=document.body
+    const darkBtn=document.getElementById('darkBtn')
+    const hcBtn=document.getElementById('hcBtn')
 
-    const refresh = () => {
-      darkBtn.textContent = body.classList.contains('dark') ? 'light'   : 'dark'
-      hcBtn.textContent   = body.classList.contains('hc')   ? 'default' : 'high contrast'
+    const refresh=()=>{
+      darkBtn.textContent=body.classList.contains('dark')?'light':'dark'
+      hcBtn.textContent =body.classList.contains('hc')  ?'default':'high contrast'
     }
 
-    darkBtn.onclick = () => { body.classList.toggle('dark'); refresh() }
-    hcBtn.onclick   = () => { body.classList.toggle('hc');   refresh() }
+    darkBtn.onclick=()=>{body.classList.toggle('dark');refresh()}
+    hcBtn.onclick  =()=>{body.classList.toggle('hc');  refresh()}
 
     refresh()
   </script>

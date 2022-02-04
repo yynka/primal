@@ -1,34 +1,18 @@
 /* color tokens */
-:root{
-  --red:#ff383c;        /* default light */
-  --bg:#fffafa;
-  --text:#020403;
-}
-body.dark{
-  --red:#ff4245;
-  --bg:#020403;
-  --text:#fffafa;
-}
-body.hc{
-  --red:#e9152d;
-  --bg:#ffffff;
-  --text:#000000;
-}
-body.dark.hc{
-  --red:#ff6165;
-  --bg:#000000;
-  --text:#ffffff;
-}
+:root{--red:#ff383c;--bg:#fffafa;--text:#020403}
+body.dark      {--red:#ff4245;--bg:#020403;--text:#fffafa}
+body.hc        {--red:#e9152d;--bg:#ffffff;--text:#000}
+body.dark.hc   {--red:#ff6165;--bg:#000;--text:#fff}
 
 /* base */
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:"program",sans-serif;          /* program ot everywhere */
+  font-family:"program",sans-serif;
 }
 
-/* hero – shifted slightly upward */
+/* hero */
 .hero{
   min-height:100vh;
   display:flex;
@@ -58,38 +42,40 @@ body{
   margin:2rem 0 2.5rem;
 }
 
-/* cta 500 */
+/* cta 500 — slightly larger, no underline */
 .cta{
+  display:inline-block;
   font-weight:500;
-  font-size:1rem;
-  padding:.9rem 2.4rem;
+  font-size:1.2rem;           /* +0.2rem */
+  padding:1rem 2.6rem;        /* a hair wider/taller */
   border:none;
   border-radius:9999px;
   background:var(--red);
   color:#fff;
+  text-decoration:none;
   cursor:pointer;
   transition:transform .05s;
 }
 .cta:hover{transform:translateX(1px)}
 
-/* toggle buttons */
+/* toggles — a bit larger & roomier */
 .toggles{
-  position:absolute;
+  position:fixed;
   top:1rem;
   right:1rem;
   display:flex;
-  gap:.5rem;
+  gap:.6rem;
 }
 .toggles button{
-  font:500 .8rem/1 "program",sans-serif;
-  padding:.4rem .9rem;
+  font:600 .9rem/1 "program",sans-serif; /* +0.1rem, heavier */
+  padding:.5rem 1rem;                    /* roomier */
   border:1px solid var(--text);
   background:var(--bg);
   color:var(--text);
   cursor:pointer;
 }
 
-/* medium screens */
+/* medium */
 @media(max-width:768px){
   .hero{transform:translateY(-4vh);}
   .header{
@@ -98,9 +84,10 @@ body{
     -webkit-text-stroke:3px var(--text);
   }
   .tagline{font-size:1.25rem;margin:1.5rem 0 2rem;}
+  .cta{font-size:1.05rem;padding:.8rem 2.2rem;}
 }
 
-/* small screens */
+/* small */
 @media(max-width:480px){
   .hero{transform:translateY(-2vh);}
   .header{
@@ -109,4 +96,5 @@ body{
     -webkit-text-stroke:2px var(--text);
   }
   .tagline{font-size:1rem;margin:1rem 0 1.5rem;}
+  .cta{font-size:.95rem;padding:.7rem 1.8rem;}
 }
